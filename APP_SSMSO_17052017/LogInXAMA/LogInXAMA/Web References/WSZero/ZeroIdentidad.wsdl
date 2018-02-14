@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost/ZeroIdentidad/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://localhost/ZeroIdentidad/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost/ZeroIdentidad/">
+      <s:element name="MetControlIdentidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZeroIdentidad" type="tns:ingresoIdentidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ingresoIdentidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="nUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nPassword" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MetControlIdentidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MetControlIdentidadResult" type="tns:sIdentidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="sIdentidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="nfechaEmision" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nRun" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nDigito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nNombres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nCargoEmpresa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nRunEmpresa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nNombreEmpresa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nIdNodo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nNombreNodo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nPerfil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ncodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ndescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MetControlPerfil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZeroPerfil" type="tns:ingresoPerfil" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ingresoPerfil">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="nUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nPerfil" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MetControlPerfilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MetControlPerfilResult" type="tns:sPerfil" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="sPerfil">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="nConcepto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nSerieUno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nSerieDos" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MetControlIdentidadSoapIn">
+    <wsdl:part name="parameters" element="tns:MetControlIdentidad" />
+  </wsdl:message>
+  <wsdl:message name="MetControlIdentidadSoapOut">
+    <wsdl:part name="parameters" element="tns:MetControlIdentidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="MetControlPerfilSoapIn">
+    <wsdl:part name="parameters" element="tns:MetControlPerfil" />
+  </wsdl:message>
+  <wsdl:message name="MetControlPerfilSoapOut">
+    <wsdl:part name="parameters" element="tns:MetControlPerfilResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosWebSSMSOSoap">
+    <wsdl:operation name="MetControlIdentidad">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene Datos de Usuario Autenticado en SSMSO</wsdl:documentation>
+      <wsdl:input message="tns:MetControlIdentidadSoapIn" />
+      <wsdl:output message="tns:MetControlIdentidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MetControlPerfil">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene Datos de Usuario y Perfil Autenticado en SSMSO</wsdl:documentation>
+      <wsdl:input message="tns:MetControlPerfilSoapIn" />
+      <wsdl:output message="tns:MetControlPerfilSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosWebSSMSOSoap" type="tns:ServiciosWebSSMSOSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MetControlIdentidad">
+      <soap:operation soapAction="http://localhost/ZeroIdentidad/MetControlIdentidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MetControlPerfil">
+      <soap:operation soapAction="http://localhost/ZeroIdentidad/MetControlPerfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosWebSSMSOSoap12" type="tns:ServiciosWebSSMSOSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MetControlIdentidad">
+      <soap12:operation soapAction="http://localhost/ZeroIdentidad/MetControlIdentidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MetControlPerfil">
+      <soap12:operation soapAction="http://localhost/ZeroIdentidad/MetControlPerfil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosWebSSMSO">
+    <wsdl:port name="ServiciosWebSSMSOSoap" binding="tns:ServiciosWebSSMSOSoap">
+      <soap:address location="http://163.247.80.132/ZeroProyect/ZeroIdentidad.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosWebSSMSOSoap12" binding="tns:ServiciosWebSSMSOSoap12">
+      <soap12:address location="http://163.247.80.132/ZeroProyect/ZeroIdentidad.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

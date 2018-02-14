@@ -1,0 +1,5 @@
+C:\Users\Eric\Documents\Visual Studio 2015\Projects\LogInXAMA\proxyanal\bin\Debug\proxyws.dll.config
+C:\Users\Eric\Documents\Visual Studio 2015\Projects\LogInXAMA\proxyanal\bin\Debug\proxyws.dll
+C:\Users\Eric\Documents\Visual Studio 2015\Projects\LogInXAMA\proxyanal\bin\Debug\proxyws.pdb
+C:\Users\Eric\Documents\Visual Studio 2015\Projects\LogInXAMA\proxyanal\obj\Debug\proxyws.dll
+C:\Users\Eric\Documents\Visual Studio 2015\Projects\LogInXAMA\proxyanal\obj\Debug\proxyws.pdb

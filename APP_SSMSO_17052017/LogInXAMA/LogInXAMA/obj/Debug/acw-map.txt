@@ -1,0 +1,8 @@
+LogInXAMA.MainActivity, LogInXAMA;md5d9103711330305b7ebdd6cc9f084dc24.MainActivity
+LogInXAMA.MainActivity, LogInXAMA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d9103711330305b7ebdd6cc9f084dc24.MainActivity
+LogInXAMA.MainActivity;md5d9103711330305b7ebdd6cc9f084dc24.MainActivity
+loginxama.MainActivity;md5d9103711330305b7ebdd6cc9f084dc24.MainActivity
+OxyPlot.Xamarin.Android.PlotView, OxyPlot.Xamarin.Android;md576548fdf6897b70553b6b405e9653aa0.PlotView
+OxyPlot.Xamarin.Android.PlotView, OxyPlot.Xamarin.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md576548fdf6897b70553b6b405e9653aa0.PlotView
+OxyPlot.Xamarin.Android.PlotView;md576548fdf6897b70553b6b405e9653aa0.PlotView
+oxyplot.xamarin.android.PlotView;md576548fdf6897b70553b6b405e9653aa0.PlotView
